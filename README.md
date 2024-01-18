@@ -1,20 +1,41 @@
-#Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Dynamsoft Capture Vision samples for Android and iOS editions
 
-#Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Requirements
 
-#Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+### Android
 
-#Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+- Supported OS: Android 5.0 (API Level 21) or higher.
+- Supported ABI: armeabi-v7a, arm64-v8a, x86 and x86_64.
+- Development Environment: Android Studio 3.4+ (Android Studio 4.2+ recommended).
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+### iOS
+
+- Supported OS: iOS 11.0 or higher (iOS 13 and higher recommended).
+- Supported ABI: arm64 and x86_64.
+- Development Environment: Xcode 13 and above (Xcode 14.1+ recommended), CocoaPods 1.11.0+
+
+## Samples
+
+| Sample Name | Description | Programming Languages |
+| ----------- | ----------- | --------------------- |
+| `DriversLicenseScanner` | Scan the PDF417 barcode on a driver's license and extract driver's information. | Java/Swift |
+| `VINScanner` | Scan the VIN code from a barcode or a text line and extract the vehicle information. | Java/Swift |
+
+## How to build (For iOS Editions)
+
+Enter the sample folder, install DBR SDK through pod command
+
+```bash
+pod install
+```
+
+Open the generated file `[SampleName].xcworkspace`.
+
+## License
+
+- You can also request an extension for your trial license in the [customer portal](https://www.dynamsoft.com/customer/license/trialLicense?product=dbr&utm_source=github).
+- If you want to use an offline license, please contact [Dynamsoft Support](https://www.dynamsoft.com/company/contact/).
+
+## Contact Us
+
+[https://www.dynamsoft.com/company/contact/](https://www.dynamsoft.com/company/contact/)
