@@ -6,13 +6,8 @@ target 'DriversLicenseScanner' do
   use_frameworks!
 
   # Pods for DriversLicenseScanner
-  pod 'DynamsoftCore', '3.0.20'
-  pod 'DynamsoftLicense', '3.0.30'
-  pod 'DynamsoftImageProcessing', '2.0.21'
-  pod 'DynamsoftCaptureVisionRouter', '2.0.21'
-  pod 'DynamsoftBarcodeReader', '10.0.21'
-  pod 'DynamsoftCameraEnhancer', '4.0.2'
-  pod 'DynamsoftCodeParser', '2.0.21'
-  pod 'DynamsoftCodeParserDedicator', '1.0.10'
+  pod 'DynamsoftBarcodeReaderBundle', '10.2.10'
+  pod 'DynamsoftCodeParser', '2.2.10'
+  pod 'DynamsoftCodeParserDedicator', '1.2.20'
 
 end

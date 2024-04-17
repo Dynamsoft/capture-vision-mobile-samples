@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.dynamsoft.core.basic_structures.CapturedResultReceiver;
+import com.dynamsoft.cvr.CapturedResultReceiver;
 import com.dynamsoft.cvr.CaptureVisionRouter;
 import com.dynamsoft.cvr.CaptureVisionRouterException;
 import com.dynamsoft.dbr.DecodedBarcodesResult;

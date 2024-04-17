@@ -14,5 +14,3 @@ allprojects {
         maven { url "https://download2.dynamsoft.com/maven/aar" }
     }
 }
-
-apply from: rootProject.file('release_dependencies.gradle')
