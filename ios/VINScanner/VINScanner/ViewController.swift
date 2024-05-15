@@ -53,6 +53,19 @@ class ViewController: UIViewController, CapturedResultReceiver {
         return indicator
     }()
     
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        self.view.backgroundColor = .white
+        self.title = "VIN Scanner"
+        
+        configureCVR()
+        configureDCE()
+        setupUI()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.tintColor = .white
@@ -67,26 +80,20 @@ class ViewController: UIViewController, CapturedResultReceiver {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         dce.close()
+        cvr.stopCapturing()
+        dce.clearBuffer()
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.view.backgroundColor = .white
-        self.title = "VIN Scanner"
-        
-        configureCVR()
-        configureDCE()
-        setupUI()
-    }
+}
 
+// MARK: - Config.
+extension ViewController {
     private func configureCVR() -> Void {
         cvr = CaptureVisionRouter()
         cvr.addResultReceiver(self)
         
         // Init settings.
-        let vinPath = Bundle.main.path(forResource: "vin", ofType: "json") ?? ""
-        try? cvr.initSettingsFromFile(vinPath)
+        let vinTemplatePath = "vin.json"
+        try? cvr.initSettingsFromFile(vinTemplatePath)
         
         // Add filter.
         resultFilter = MultiFrameResultCrossFilter()
@@ -133,32 +140,10 @@ class ViewController: UIViewController, CapturedResultReceiver {
             }
         }
     }
-    
-    private func switchTemplate(with pattern: VINPattern) -> Void {
-        self.loadingIndicator.startAnimating()
-        cvr.stopCapturing()
-        
-        switch pattern {
-        case .barcode:
-            currentVINTemplate = .barcode
-            dce.disableEnhancedFeatures(.frameFilter)
-            break
-        case .text:
-            currentVINTemplate = .text
-            dce.enableEnhancedFeatures(.frameFilter)
-            break
-        }
-        
-        cvr.startCapturing(currentVINTemplate.rawValue) {
-            [unowned self] isSuccess, error in
-            if let error = error {
-                self.displayError(msg: error.localizedDescription)
-            }
-        }
-        self.loadingIndicator.stopAnimating()
-    }
-    
-    // MARK: - CapturedResultReceiver
+}
+
+// MARK: - CapturedResultReceiver
+extension ViewController {
     func onDecodedBarcodesReceived(_ result: DecodedBarcodesResult) {
         guard let items = result.items else {
             isExistRecognizedText = false
@@ -193,7 +178,7 @@ class ViewController: UIViewController, CapturedResultReceiver {
         guard let items = result.items else {
             if isExistRecognizedText == true {
                 DispatchQueue.main.async {
-                    self.resultView.text = "Failed to parse the result.\n The text is :" + self.resultView.text
+                    self.resultView.text = parseFailedTip + self.resultView.text
                 }
             }
             return
@@ -203,11 +188,40 @@ class ViewController: UIViewController, CapturedResultReceiver {
         }
         
         cvr.stopCapturing()
+        dce.clearBuffer()
         DispatchQueue.main.async{
             let resultVC = VINResultViewController()
             resultVC.vinResultItem = items.first!
             self.navigationController?.pushViewController(resultVC, animated: true)
         }
+    }
+}
+
+// MARK: - General methods.
+extension ViewController {
+    private func switchTemplate(with pattern: VINPattern) -> Void {
+        self.loadingIndicator.startAnimating()
+        cvr.stopCapturing()
+        dce.clearBuffer()
+        
+        switch pattern {
+        case .barcode:
+            currentVINTemplate = .barcode
+            dce.disableEnhancedFeatures(.frameFilter)
+            break
+        case .text:
+            currentVINTemplate = .text
+            dce.enableEnhancedFeatures(.frameFilter)
+            break
+        }
+        
+        cvr.startCapturing(currentVINTemplate.rawValue) {
+            [unowned self] isSuccess, error in
+            if let error = error {
+                self.displayError(msg: error.localizedDescription)
+            }
+        }
+        self.loadingIndicator.stopAnimating()
     }
     
     private func displayError(_ title: String = "", msg: String, _ acTitle: String = "OK", completion: ConfirmCompletion? = nil) {
@@ -217,6 +231,4 @@ class ViewController: UIViewController, CapturedResultReceiver {
             self.present(alert, animated: true, completion: nil)
         }
     }
-
 }
-

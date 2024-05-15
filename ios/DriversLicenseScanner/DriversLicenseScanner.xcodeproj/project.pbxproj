@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A15A87B2B3E584400C42338 /* drivers-license.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A15A87A2B3E584400C42338 /* drivers-license.json */; };
 		0A438C362B329551002A1BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438C352B329551002A1BA7 /* AppDelegate.swift */; };
 		0A438C3A2B329551002A1BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438C392B329551002A1BA7 /* ViewController.swift */; };
 		0A438C3D2B329551002A1BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A438C3B2B329551002A1BA7 /* Main.storyboard */; };
@@ -17,6 +16,7 @@
 		0A438C6E2B32969A002A1BA7 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438C682B32969A002A1BA7 /* UIView+Frame.swift */; };
 		0A438C702B32969A002A1BA7 /* Dynamsoft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438C6C2B32969A002A1BA7 /* Dynamsoft.swift */; };
 		0A438C722B3296C5002A1BA7 /* DriverLicenseResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438C712B3296C5002A1BA7 /* DriverLicenseResultViewController.swift */; };
+		0AF6AE842BF34FA70040C07A /* DynamsoftResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0AF6AE832BF34FA70040C07A /* DynamsoftResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +33,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0A15A87A2B3E584400C42338 /* drivers-license.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "drivers-license.json"; sourceTree = "<group>"; };
 		0A438C322B329551002A1BA7 /* DriversLicenseScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriversLicenseScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A438C352B329551002A1BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A438C392B329551002A1BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		0A438C682B32969A002A1BA7 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		0A438C6C2B32969A002A1BA7 /* Dynamsoft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamsoft.swift; sourceTree = "<group>"; };
 		0A438C712B3296C5002A1BA7 /* DriverLicenseResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverLicenseResultViewController.swift; sourceTree = "<group>"; };
+		0AF6AE832BF34FA70040C07A /* DynamsoftResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DynamsoftResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +61,7 @@
 		0A438C292B329551002A1BA7 = {
 			isa = PBXGroup;
 			children = (
+				0AF6AE832BF34FA70040C07A /* DynamsoftResources.bundle */,
 				0A438C342B329551002A1BA7 /* DriversLicenseScanner */,
 				0A438C332B329551002A1BA7 /* Products */,
 				0A438C492B329589002A1BA7 /* Frameworks */,
@@ -79,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				0A438C662B32969A002A1BA7 /* Category */,
-				0A438C692B32969A002A1BA7 /* Template */,
 				0A438C6B2B32969A002A1BA7 /* Utils */,
 				0A438C352B329551002A1BA7 /* AppDelegate.swift */,
 				0A438C392B329551002A1BA7 /* ViewController.swift */,
@@ -106,14 +106,6 @@
 				0A438C682B32969A002A1BA7 /* UIView+Frame.swift */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		0A438C692B32969A002A1BA7 /* Template */ = {
-			isa = PBXGroup;
-			children = (
-				0A15A87A2B3E584400C42338 /* drivers-license.json */,
-			);
-			path = Template;
 			sourceTree = "<group>";
 		};
 		0A438C6B2B32969A002A1BA7 /* Utils */ = {
@@ -185,7 +177,7 @@
 				0A438C422B329553002A1BA7 /* LaunchScreen.storyboard in Resources */,
 				0A438C3F2B329553002A1BA7 /* Assets.xcassets in Resources */,
 				0A438C3D2B329551002A1BA7 /* Main.storyboard in Resources */,
-				0A15A87B2B3E584400C42338 /* drivers-license.json in Resources */,
+				0AF6AE842BF34FA70040C07A /* DynamsoftResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

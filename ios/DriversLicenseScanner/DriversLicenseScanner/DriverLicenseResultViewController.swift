@@ -50,7 +50,7 @@ let SOUTH_AFRICA_DL_InfoList: [[String: String]] = [["Title": "Surname", "FieldN
 ]
 
 
-class DriverLicenseResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DriverLicenseResultViewController: UIViewController {
 
     var driverLicenseResultItem: ParsedResultItem!
     
@@ -134,8 +134,9 @@ class DriverLicenseResultViewController: UIViewController, UITableViewDelegate, 
     private func setupUI() -> Void {
         self.view.addSubview(resultTableView)
     }
-    
-    // MARK: - UITableViewDelegate
+}
+
+extension DriverLicenseResultViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -164,6 +165,4 @@ class DriverLicenseResultViewController: UIViewController, UITableViewDelegate, 
         cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 14)
         return cell!
     }
-
-
 }

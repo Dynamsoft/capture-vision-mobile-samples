@@ -6,7 +6,7 @@
 
 - Supported OS: Android 5.0 (API Level 21) or higher.
 - Supported ABI: armeabi-v7a, arm64-v8a, x86 and x86_64.
-- Development Environment: Android Studio 3.4+ (Android Studio 4.2+ recommended).
+- Development Environment: Android Studio 2022.2.1 or higher.
 
 ### iOS
 

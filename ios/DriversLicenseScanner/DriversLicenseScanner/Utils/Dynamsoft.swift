@@ -1,9 +1,3 @@
-//
-//  Dynamsoft.swift
-//  TinyBarcode
-//
-//  Copyright © Dynamsoft. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -28,6 +22,6 @@ enum DriverLicenseType: String {
     case SOUTH_AFRICA_DL = "SOUTH_AFRICA_DL"
 }
 
-let parseFailedTip = "Failed to parse the result.\n The barcode text is :"
+let parseFailedTip = "Failed to parse the result.\n The barcode text is :\n"
 
 let parsedContentDeficiencyTip = "Failed to parse the result. The drivers' information does not exist in the barcode!"

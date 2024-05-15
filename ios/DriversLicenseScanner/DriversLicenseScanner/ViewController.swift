@@ -35,27 +35,7 @@ class ViewController: UIViewController, CapturedResultReceiver {
         return resultView
     }()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 59.003 / 255.0, green: 61.9991 / 255.0, blue: 69.0028 / 255.0, alpha: 1)
-        
-        dce.open()
-        cvr.stopCapturing()
-        cvr.startCapturing(driveLicenseTemplate) {
-            [unowned self] isSuccess, error in
-            if let error = error {
-                self.displayError(msg: error.localizedDescription)
-            }
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        dce.close()
-    }
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,14 +47,40 @@ class ViewController: UIViewController, CapturedResultReceiver {
         configureDCE()
         setupUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 59.003 / 255.0, green: 61.9991 / 255.0, blue: 69.0028 / 255.0, alpha: 1)
+        
+        dce.open()
+        cvr.startCapturing(driveLicenseTemplate) {
+            [unowned self] isSuccess, error in
+            if let error = error {
+                self.displayError(msg: error.localizedDescription)
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        dce.close()
+        cvr.stopCapturing()
+        dce.clearBuffer()
+    }
+}
 
+// MARK: - Config.
+extension ViewController {
     private func configureCVR() -> Void {
         cvr = CaptureVisionRouter()
         cvr.addResultReceiver(self)
         
         // Init settings.
-        let driverLicensePath = Bundle.main.path(forResource: "drivers-license", ofType: "json") ?? ""
-        try? cvr.initSettingsFromFile(driverLicensePath)
+        let driverLicenseTemplatePath = "drivers-license.json"
+        try? cvr.initSettingsFromFile(driverLicenseTemplatePath)
     }
     
     private func configureDCE() -> Void {
@@ -84,7 +90,6 @@ class ViewController: UIViewController, CapturedResultReceiver {
         
         let dbrDrawingLayer = dceView.getDrawingLayer(DrawingLayerId.DBR.rawValue)
         dbrDrawingLayer?.visible = true
-     
         dce = CameraEnhancer(view: dceView)
         
         // CVR link DCE.
@@ -94,8 +99,10 @@ class ViewController: UIViewController, CapturedResultReceiver {
     private func setupUI() -> Void {
         self.view.addSubview(resultView)
     }
-    
-    // MARK: - CapturedResultReceiver
+}
+
+// MARK: - CapturedResultReceiver
+extension ViewController {
     func onDecodedBarcodesReceived(_ result: DecodedBarcodesResult) {
         guard let items = result.items else {
             isExistRecognizedText = false
@@ -125,6 +132,7 @@ class ViewController: UIViewController, CapturedResultReceiver {
         
         if isLegal == true {
             cvr.stopCapturing()
+            dce.clearBuffer()
         }
         
         DispatchQueue.main.async {
@@ -138,16 +146,10 @@ class ViewController: UIViewController, CapturedResultReceiver {
             }
         }
     }
-    
-    
-    private func displayError(_ title: String = "", msg: String, _ acTitle: String = "OK", completion: ConfirmCompletion? = nil) {
-        DispatchQueue.main.async {
-            let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: acTitle, style: .default, handler: { _ in completion?() }))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
+}
+
+// MARK: - General methods.
+extension ViewController {
     func determineWhetherParsedItemIsLegal(parsedItem: ParsedResultItem) -> (Bool, String) {
         let allKeys = parsedItem.parsedFields.keys
         var isLegal = false
@@ -189,4 +191,11 @@ class ViewController: UIViewController, CapturedResultReceiver {
         return (isLegal, tip)
     }
     
+    private func displayError(_ title: String = "", msg: String, _ acTitle: String = "OK", completion: ConfirmCompletion? = nil) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: acTitle, style: .default, handler: { _ in completion?() }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }

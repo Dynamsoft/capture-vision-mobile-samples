@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A15A87D2B3E587500C42338 /* vin.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A15A87C2B3E587500C42338 /* vin.json */; };
-		0A3ABD6F2B4C001700E4F877 /* CharacterModel.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0A3ABD6E2B4C001600E4F877 /* CharacterModel.bundle */; };
 		0A438C802B32C99E002A1BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438C7F2B32C99E002A1BA7 /* AppDelegate.swift */; };
 		0A438C842B32C99E002A1BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438C832B32C99E002A1BA7 /* ViewController.swift */; };
 		0A438C872B32C99E002A1BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A438C852B32C99E002A1BA7 /* Main.storyboard */; };
@@ -22,24 +20,10 @@
 		0A438CC42B32D67E002A1BA7 /* ComponentsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CC32B32D67E002A1BA7 /* ComponentsUtil.swift */; };
 		0A438CC62B32D735002A1BA7 /* NSObject+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CC52B32D735002A1BA7 /* NSObject+Name.swift */; };
 		0A438CC92B32EB8E002A1BA7 /* VINResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CC82B32EB8E002A1BA7 /* VINResultViewController.swift */; };
+		0AF6AE822BF34B820040C07A /* DynamsoftResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0AF6AE812BF34B820040C07A /* DynamsoftResources.bundle */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		0A438CAF2B32CA4D002A1BA7 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		0A15A87C2B3E587500C42338 /* vin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vin.json; sourceTree = "<group>"; };
-		0A3ABD6E2B4C001600E4F877 /* CharacterModel.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CharacterModel.bundle; sourceTree = "<group>"; };
 		0A438C7C2B32C99E002A1BA7 /* VINScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VINScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A438C7F2B32C99E002A1BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A438C832B32C99E002A1BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +39,7 @@
 		0A438CC32B32D67E002A1BA7 /* ComponentsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsUtil.swift; sourceTree = "<group>"; };
 		0A438CC52B32D735002A1BA7 /* NSObject+Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Name.swift"; sourceTree = "<group>"; };
 		0A438CC82B32EB8E002A1BA7 /* VINResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VINResultViewController.swift; sourceTree = "<group>"; };
+		0AF6AE812BF34B820040C07A /* DynamsoftResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DynamsoftResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +56,7 @@
 		0A438C732B32C99E002A1BA7 = {
 			isa = PBXGroup;
 			children = (
-				0A3ABD6E2B4C001600E4F877 /* CharacterModel.bundle */,
+				0AF6AE812BF34B820040C07A /* DynamsoftResources.bundle */,
 				0A438C7E2B32C99E002A1BA7 /* VINScanner */,
 				0A438C7D2B32C99E002A1BA7 /* Products */,
 				0A438C932B32CA43002A1BA7 /* Frameworks */,
@@ -91,7 +76,6 @@
 			children = (
 				0A438CB42B32CA6E002A1BA7 /* Category */,
 				0A438CBE2B32D58F002A1BA7 /* Pattern */,
-				0A438CB02B32CA6E002A1BA7 /* Template */,
 				0A438CB22B32CA6E002A1BA7 /* Utils */,
 				0A438C7F2B32C99E002A1BA7 /* AppDelegate.swift */,
 				0A438C832B32C99E002A1BA7 /* ViewController.swift */,
@@ -109,14 +93,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0A438CB02B32CA6E002A1BA7 /* Template */ = {
-			isa = PBXGroup;
-			children = (
-				0A15A87C2B3E587500C42338 /* vin.json */,
-			);
-			path = Template;
 			sourceTree = "<group>";
 		};
 		0A438CB22B32CA6E002A1BA7 /* Utils */ = {
@@ -157,7 +133,6 @@
 				0A438C782B32C99E002A1BA7 /* Sources */,
 				0A438C792B32C99E002A1BA7 /* Frameworks */,
 				0A438C7A2B32C99E002A1BA7 /* Resources */,
-				0A438CAF2B32CA4D002A1BA7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,9 +180,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A3ABD6F2B4C001700E4F877 /* CharacterModel.bundle in Resources */,
+				0AF6AE822BF34B820040C07A /* DynamsoftResources.bundle in Resources */,
 				0A438C8C2B32C99F002A1BA7 /* LaunchScreen.storyboard in Resources */,
-				0A15A87D2B3E587500C42338 /* vin.json in Resources */,
 				0A438C892B32C99F002A1BA7 /* Assets.xcassets in Resources */,
 				0A438C872B32C99E002A1BA7 /* Main.storyboard in Resources */,
 			);

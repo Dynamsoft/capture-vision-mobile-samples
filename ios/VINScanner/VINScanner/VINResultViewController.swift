@@ -75,8 +75,10 @@ class VINResultViewController: UIViewController, UITableViewDelegate, UITableVie
     private func setupUI() -> Void {
         self.view.addSubview(resultTableView)
     }
-    
-    // MARK: - UITableViewDelegate
+
+}
+
+extension VINResultViewController {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -105,7 +107,4 @@ class VINResultViewController: UIViewController, UITableViewDelegate, UITableVie
         cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 14)
         return cell!
     }
-
-  
-
 }

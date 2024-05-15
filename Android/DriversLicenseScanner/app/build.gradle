@@ -31,10 +31,20 @@ android {
     }
 }
 
+
+def getVersion(String productSimpleName, String defaultValue) {
+    if (rootProject.ext.has("versions")) {
+        return rootProject.ext.get("versions").get(productSimpleName) != null ?
+                rootProject.ext.get("versions").get(productSimpleName) : defaultValue
+    } else {
+        return defaultValue
+    }
+}
+
 dependencies {
-    implementation "com.dynamsoft:dynamsoftbarcodereaderbundle:10.2.10"
-    implementation "com.dynamsoft:dynamsoftcodeparser:2.2.10"
-    implementation "com.dynamsoft:dynamsoftcodeparserdedicator:1.2.20"
+    implementation "com.dynamsoft:dynamsoftbarcodereaderbundle:10.2.1100"
+    implementation "com.dynamsoft:dynamsoftcodeparser:${getVersion("dcp", "2.2.11")}"
+    implementation "com.dynamsoft:dynamsoftcodeparserdedicator:${getVersion("dcpd", "1.2.20")}"
 
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.0'

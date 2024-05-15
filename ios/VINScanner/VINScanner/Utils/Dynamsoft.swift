@@ -1,8 +1,3 @@
-/*
- * This is the sample of Dynamsoft Capture Vision Router.
- *
- * Copyright © Dynamsoft Corporation.  All rights reserved.
- */
 
 import Foundation
 import UIKit
@@ -33,4 +28,4 @@ typealias PatternSelectedCompletion = (_ pattern: VINPattern) -> Void
 
 typealias ConfirmCompletion = () -> Void
 
-let parseFailedTip = "Failed to parse the result.\n The text is :"
+let parseFailedTip = "Failed to parse the result.\n The text is :\n"

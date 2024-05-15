@@ -6,7 +6,7 @@ target 'DriversLicenseScanner' do
   use_frameworks!
 
   # Pods for DriversLicenseScanner
-  pod 'DynamsoftBarcodeReaderBundle', '10.2.10'
+  pod 'DynamsoftBarcodeReaderBundle', '10.2.1100'
   pod 'DynamsoftCodeParser', '2.2.10'
   pod 'DynamsoftCodeParserDedicator', '1.2.20'
 
