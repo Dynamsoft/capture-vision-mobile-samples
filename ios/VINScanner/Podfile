@@ -6,10 +6,10 @@ target 'VINScanner' do
   use_frameworks!
 
   # Pods for VINScanner
-  pod 'DynamsoftBarcodeReaderBundle', '10.2.1100'
-  pod 'DynamsoftLabelRecognizerBundle', '3.2.3000'
-  pod 'DynamsoftCodeParser', '2.2.10'
-  pod 'DynamsoftCodeParserDedicator', '1.2.20'
+  pod 'DynamsoftBarcodeReaderBundle', '10.2.1101'
+  pod 'DynamsoftLabelRecognizerBundle', '3.2.3001'
+  pod 'DynamsoftCodeParser', '2.2.11'
+  pod 'DynamsoftCodeParserDedicator', '1.2.21'
 
 
 end
