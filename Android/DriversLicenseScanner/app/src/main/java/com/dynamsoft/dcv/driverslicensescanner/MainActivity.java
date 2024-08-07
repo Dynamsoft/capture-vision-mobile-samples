@@ -1,6 +1,7 @@
 package com.dynamsoft.dcv.driverslicensescanner;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,12 +21,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState == null) {
+            // Initialize the license.
+            // The license string here is a trial license. Note that network connection is required for this license to work.
+            // You can request an extension via the following link: https://www.dynamsoft.com/customer/license/trialLicense?product=cvs&utm_source=samples&package=android
             LicenseManager.initLicense("DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9", this, (isSuccessful, error) -> {
                 if (!isSuccessful) {
-                    runOnUiThread(() -> new AlertDialog.Builder(this)
-                            .setTitle("Init license error:")
-                            .setMessage(error.getMessage())
-                            .show());
+                    error.printStackTrace();
+                    runOnUiThread(() -> ((TextView) findViewById(R.id.tv_license_error)).setText("License initialization failed: "+error.getMessage()));
                 }
             });
         }

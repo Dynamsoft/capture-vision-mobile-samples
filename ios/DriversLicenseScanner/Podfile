@@ -7,7 +7,7 @@ target 'DriversLicenseScanner' do
 
   # Pods for DriversLicenseScanner
   pod 'DynamsoftBarcodeReaderBundle', '10.2.1101'
-  pod 'DynamsoftCodeParser', '2.2.11'
-  pod 'DynamsoftCodeParserDedicator', '1.2.21'
+  pod 'DynamsoftCodeParser', '2.2.10'
+  pod 'DynamsoftCodeParserDedicator', '1.2.20'
 
 end

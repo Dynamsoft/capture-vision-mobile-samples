@@ -1,5 +1,6 @@
 package com.dynamsoft.dcv.driverslicensescanner.fragments;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +11,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.dynamsoft.cvr.CapturedResultReceiver;
+import com.dynamsoft.core.basic_structures.CompletionListener;
 import com.dynamsoft.cvr.CaptureVisionRouter;
 import com.dynamsoft.cvr.CaptureVisionRouterException;
+import com.dynamsoft.cvr.CapturedResultReceiver;
 import com.dynamsoft.dbr.DecodedBarcodesResult;
 import com.dynamsoft.dce.CameraEnhancer;
 import com.dynamsoft.dce.CameraEnhancerException;
@@ -21,6 +23,8 @@ import com.dynamsoft.dcv.driverslicensescanner.MainViewModel;
 import com.dynamsoft.dcv.driverslicensescanner.ParseUtil;
 import com.dynamsoft.dcv.driverslicensescanner.R;
 import com.dynamsoft.dcv.driverslicensescanner.databinding.FragmentScannerBinding;
+
+import java.util.Locale;
 
 public class ScannerFragment extends Fragment {
     private static final String TEMPLATE_ASSETS_FILE_NAME = "drivers-license.json";
@@ -55,7 +59,19 @@ public class ScannerFragment extends Fragment {
         } catch (CameraEnhancerException e) {
             e.printStackTrace();
         }
-        mRouter.startCapturing(TEMPLATE_READ_PDF417, null);
+        mRouter.startCapturing(TEMPLATE_READ_PDF417, new CompletionListener() {
+
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onFailure(int errorCode, String errorString) {
+                requireActivity().runOnUiThread(() ->
+                        showDialog("Error", String.format(Locale.getDefault(), "ErrorCode: %d %nErrorMessage: %s", errorCode, errorString)));
+            }
+        });
     }
 
     @Override
@@ -119,4 +135,12 @@ public class ScannerFragment extends Fragment {
         }
     }
 
+    private void showDialog(String title, String message) {
+        new AlertDialog.Builder(requireContext())
+                .setCancelable(true)
+                .setPositiveButton("OK", null)
+                .setTitle(title)
+                .setMessage(message)
+                .show();
+    }
 }

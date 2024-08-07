@@ -1,5 +1,6 @@
 package com.dynamsoft.dcv.vinscanner.fragments;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.dynamsoft.core.basic_structures.CompletionListener;
 import com.dynamsoft.cvr.CapturedResultReceiver;
 import com.dynamsoft.core.basic_structures.DSRect;
 import com.dynamsoft.core.basic_structures.EnumCapturedResultItemType;
@@ -27,6 +29,7 @@ import com.dynamsoft.dcv.vinscanner.databinding.FragmentScannerBinding;
 import com.dynamsoft.dlr.RecognizedTextLinesResult;
 import com.dynamsoft.utility.MultiFrameResultCrossFilter;
 
+import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -99,7 +102,19 @@ public class ScannerFragment extends Fragment {
         } catch (CameraEnhancerException e) {
             e.printStackTrace();
         }
-        mRouter.startCapturing(mTemplate, null);
+        mRouter.startCapturing(mTemplate,  new CompletionListener() {
+
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onFailure(int errorCode, String errorString) {
+                requireActivity().runOnUiThread(() ->
+                        showDialog("Error", String.format(Locale.getDefault(), "ErrorCode: %d %nErrorMessage: %s", errorCode, errorString)));
+            }
+        });
     }
 
     @Override
@@ -176,5 +191,14 @@ public class ScannerFragment extends Fragment {
                 }
             });
         }
+    }
+
+    private void showDialog(String title, String message) {
+        new AlertDialog.Builder(requireContext())
+                .setCancelable(true)
+                .setPositiveButton("OK", null)
+                .setTitle(title)
+                .setMessage(message)
+                .show();
     }
 }

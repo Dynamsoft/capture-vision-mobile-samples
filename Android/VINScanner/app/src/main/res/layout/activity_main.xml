@@ -20,4 +20,16 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
+
+    <TextView
+        android:id="@+id/tv_license_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="24dp"
+        android:padding="16dp"
+        android:textAlignment="center"
+        android:textColor="#FFFF0000"
+        android:textSize="16sp" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
