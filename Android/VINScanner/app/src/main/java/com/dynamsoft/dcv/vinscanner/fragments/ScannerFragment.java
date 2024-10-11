@@ -1,6 +1,5 @@
 package com.dynamsoft.dcv.vinscanner.fragments;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,12 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.dynamsoft.core.basic_structures.CompletionListener;
-import com.dynamsoft.cvr.CapturedResultReceiver;
 import com.dynamsoft.core.basic_structures.DSRect;
 import com.dynamsoft.core.basic_structures.EnumCapturedResultItemType;
 import com.dynamsoft.cvr.CaptureVisionRouter;
 import com.dynamsoft.cvr.CaptureVisionRouterException;
+import com.dynamsoft.cvr.CapturedResultReceiver;
 import com.dynamsoft.dbr.DecodedBarcodesResult;
 import com.dynamsoft.dce.CameraEnhancer;
 import com.dynamsoft.dce.CameraEnhancerException;
@@ -29,14 +27,12 @@ import com.dynamsoft.dcv.vinscanner.databinding.FragmentScannerBinding;
 import com.dynamsoft.dlr.RecognizedTextLinesResult;
 import com.dynamsoft.utility.MultiFrameResultCrossFilter;
 
-import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class ScannerFragment extends Fragment {
-    private static final String TEMPLATE_ASSETS_FILE_NAME = "vin.json";
     private static final String TEMPLATE_READ_VIN_BARCODE = "ReadVINBarcode";
     private static final String TEMPLATE_READ_VIN_TEXT = "ReadVINText";
     private final ExecutorService switchModeThread = new ThreadPoolExecutor(1, 1, 0, TimeUnit.MILLISECONDS,
@@ -102,19 +98,7 @@ public class ScannerFragment extends Fragment {
         } catch (CameraEnhancerException e) {
             e.printStackTrace();
         }
-        mRouter.startCapturing(mTemplate,  new CompletionListener() {
-
-            @Override
-            public void onSuccess() {
-
-            }
-
-            @Override
-            public void onFailure(int errorCode, String errorString) {
-                requireActivity().runOnUiThread(() ->
-                        showDialog("Error", String.format(Locale.getDefault(), "ErrorCode: %d %nErrorMessage: %s", errorCode, errorString)));
-            }
-        });
+        mRouter.startCapturing(mTemplate, null);
     }
 
     @Override
@@ -136,11 +120,6 @@ public class ScannerFragment extends Fragment {
 
     private void initCaptureVisionRouter() {
         mRouter = new CaptureVisionRouter(requireContext());
-        try {
-            mRouter.initSettingsFromFile(TEMPLATE_ASSETS_FILE_NAME);
-        } catch (CaptureVisionRouterException e) {
-            e.printStackTrace();
-        }
         MultiFrameResultCrossFilter filter = new MultiFrameResultCrossFilter();
         filter.enableResultCrossVerification(EnumCapturedResultItemType.CRIT_BARCODE | EnumCapturedResultItemType.CRIT_TEXT_LINE, true);
         mRouter.addResultFilter(filter);
@@ -191,14 +170,5 @@ public class ScannerFragment extends Fragment {
                 }
             });
         }
-    }
-
-    private void showDialog(String title, String message) {
-        new AlertDialog.Builder(requireContext())
-                .setCancelable(true)
-                .setPositiveButton("OK", null)
-                .setTitle(title)
-                .setMessage(message)
-                .show();
     }
 }

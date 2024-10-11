@@ -18,19 +18,9 @@
 
 | Sample Name | Description | Programming Languages |
 | ----------- | ----------- | --------------------- |
+| `DocumentScanner` | Scan and deskew document pages from the video stream. | Java/Kotlin/Objective-C/Swift |
 | `DriversLicenseScanner` | Scan the PDF417 barcode on a driver's license and extract driver's information. | Java/Swift |
-| `MRZScanner` | Scan the MRZ area on a passport, an Id Card, or a VISA and extract the encoded content to human-readable fields. | Java/Swift |
 | `VINScanner` | Scan the VIN code from a barcode or a text line and extract the vehicle information. | Java/Swift |
-
-## How to build (For iOS Editions)
-
-Enter the sample folder, install DBR SDK through pod command
-
-```bash
-pod install
-```
-
-Open the generated file `[SampleName].xcworkspace`.
 
 ## License
 

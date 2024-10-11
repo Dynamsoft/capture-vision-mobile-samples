@@ -1,0 +1,13 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = "DocumentScanner"
+include ':AutoNormalize'
+include ':EditAndNormalize'
+include ':AutoNormalizeKt'
+include ':EditAndNormalizeKt'

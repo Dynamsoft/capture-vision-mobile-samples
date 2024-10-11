@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,14 @@
 		0A438C6E2B32969A002A1BA7 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438C682B32969A002A1BA7 /* UIView+Frame.swift */; };
 		0A438C702B32969A002A1BA7 /* Dynamsoft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438C6C2B32969A002A1BA7 /* Dynamsoft.swift */; };
 		0A438C722B3296C5002A1BA7 /* DriverLicenseResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438C712B3296C5002A1BA7 /* DriverLicenseResultViewController.swift */; };
-		0AF6AE842BF34FA70040C07A /* DynamsoftResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0AF6AE832BF34FA70040C07A /* DynamsoftResources.bundle */; };
+		68AD8FC72CB4D8EC005E8BBF /* DynamsoftBarcodeReader in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FC62CB4D8EC005E8BBF /* DynamsoftBarcodeReader */; };
+		68AD8FC92CB4D8EC005E8BBF /* DynamsoftCameraEnhancer in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FC82CB4D8EC005E8BBF /* DynamsoftCameraEnhancer */; };
+		68AD8FCB2CB4D8EC005E8BBF /* DynamsoftCaptureVisionRouter in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FCA2CB4D8EC005E8BBF /* DynamsoftCaptureVisionRouter */; };
+		68AD8FCD2CB4D8EC005E8BBF /* DynamsoftCodeParser in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FCC2CB4D8EC005E8BBF /* DynamsoftCodeParser */; };
+		68AD8FCF2CB4D8EC005E8BBF /* DynamsoftCodeParserDedicator in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FCE2CB4D8EC005E8BBF /* DynamsoftCodeParserDedicator */; };
+		68AD8FD12CB4D8EC005E8BBF /* DynamsoftCore in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FD02CB4D8EC005E8BBF /* DynamsoftCore */; };
+		68AD8FD32CB4D8EC005E8BBF /* DynamsoftImageProcessing in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FD22CB4D8EC005E8BBF /* DynamsoftImageProcessing */; };
+		68AD8FD52CB4D8EC005E8BBF /* DynamsoftLicense in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FD42CB4D8EC005E8BBF /* DynamsoftLicense */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,7 +51,6 @@
 		0A438C682B32969A002A1BA7 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		0A438C6C2B32969A002A1BA7 /* Dynamsoft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamsoft.swift; sourceTree = "<group>"; };
 		0A438C712B3296C5002A1BA7 /* DriverLicenseResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverLicenseResultViewController.swift; sourceTree = "<group>"; };
-		0AF6AE832BF34FA70040C07A /* DynamsoftResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DynamsoftResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68AD8FD52CB4D8EC005E8BBF /* DynamsoftLicense in Frameworks */,
+				68AD8FCD2CB4D8EC005E8BBF /* DynamsoftCodeParser in Frameworks */,
+				68AD8FCF2CB4D8EC005E8BBF /* DynamsoftCodeParserDedicator in Frameworks */,
+				68AD8FC72CB4D8EC005E8BBF /* DynamsoftBarcodeReader in Frameworks */,
+				68AD8FD32CB4D8EC005E8BBF /* DynamsoftImageProcessing in Frameworks */,
+				68AD8FD12CB4D8EC005E8BBF /* DynamsoftCore in Frameworks */,
+				68AD8FC92CB4D8EC005E8BBF /* DynamsoftCameraEnhancer in Frameworks */,
+				68AD8FCB2CB4D8EC005E8BBF /* DynamsoftCaptureVisionRouter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +75,6 @@
 		0A438C292B329551002A1BA7 = {
 			isa = PBXGroup;
 			children = (
-				0AF6AE832BF34FA70040C07A /* DynamsoftResources.bundle */,
 				0A438C342B329551002A1BA7 /* DriversLicenseScanner */,
 				0A438C332B329551002A1BA7 /* Products */,
 				0A438C492B329589002A1BA7 /* Frameworks */,
@@ -133,6 +146,16 @@
 			dependencies = (
 			);
 			name = DriversLicenseScanner;
+			packageProductDependencies = (
+				68AD8FC62CB4D8EC005E8BBF /* DynamsoftBarcodeReader */,
+				68AD8FC82CB4D8EC005E8BBF /* DynamsoftCameraEnhancer */,
+				68AD8FCA2CB4D8EC005E8BBF /* DynamsoftCaptureVisionRouter */,
+				68AD8FCC2CB4D8EC005E8BBF /* DynamsoftCodeParser */,
+				68AD8FCE2CB4D8EC005E8BBF /* DynamsoftCodeParserDedicator */,
+				68AD8FD02CB4D8EC005E8BBF /* DynamsoftCore */,
+				68AD8FD22CB4D8EC005E8BBF /* DynamsoftImageProcessing */,
+				68AD8FD42CB4D8EC005E8BBF /* DynamsoftLicense */,
+			);
 			productName = DriversLicenseScanner;
 			productReference = 0A438C322B329551002A1BA7 /* DriversLicenseScanner.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +183,9 @@
 				Base,
 			);
 			mainGroup = 0A438C292B329551002A1BA7;
+			packageReferences = (
+				68AD8FC52CB4D8EC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */,
+			);
 			productRefGroup = 0A438C332B329551002A1BA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -177,7 +203,6 @@
 				0A438C422B329553002A1BA7 /* LaunchScreen.storyboard in Resources */,
 				0A438C3F2B329553002A1BA7 /* Assets.xcassets in Resources */,
 				0A438C3D2B329551002A1BA7 /* Main.storyboard in Resources */,
-				0AF6AE842BF34FA70040C07A /* DynamsoftResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +440,60 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		68AD8FC52CB4D8EC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Dynamsoft/capture-vision-spm";
+			requirement = {
+				kind = exactVersion;
+				version = 2.4.2000;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		68AD8FC62CB4D8EC005E8BBF /* DynamsoftBarcodeReader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68AD8FC52CB4D8EC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
+			productName = DynamsoftBarcodeReader;
+		};
+		68AD8FC82CB4D8EC005E8BBF /* DynamsoftCameraEnhancer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68AD8FC52CB4D8EC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
+			productName = DynamsoftCameraEnhancer;
+		};
+		68AD8FCA2CB4D8EC005E8BBF /* DynamsoftCaptureVisionRouter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68AD8FC52CB4D8EC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
+			productName = DynamsoftCaptureVisionRouter;
+		};
+		68AD8FCC2CB4D8EC005E8BBF /* DynamsoftCodeParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68AD8FC52CB4D8EC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
+			productName = DynamsoftCodeParser;
+		};
+		68AD8FCE2CB4D8EC005E8BBF /* DynamsoftCodeParserDedicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68AD8FC52CB4D8EC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
+			productName = DynamsoftCodeParserDedicator;
+		};
+		68AD8FD02CB4D8EC005E8BBF /* DynamsoftCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68AD8FC52CB4D8EC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
+			productName = DynamsoftCore;
+		};
+		68AD8FD22CB4D8EC005E8BBF /* DynamsoftImageProcessing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68AD8FC52CB4D8EC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
+			productName = DynamsoftImageProcessing;
+		};
+		68AD8FD42CB4D8EC005E8BBF /* DynamsoftLicense */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68AD8FC52CB4D8EC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
+			productName = DynamsoftLicense;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A438C2A2B329551002A1BA7 /* Project object */;
 }

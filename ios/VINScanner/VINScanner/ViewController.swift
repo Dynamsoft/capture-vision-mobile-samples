@@ -92,10 +92,6 @@ extension ViewController {
         cvr = CaptureVisionRouter()
         cvr.addResultReceiver(self)
         
-        // Init settings.
-        let vinTemplatePath = "vin.json"
-        try? cvr.initSettingsFromFile(vinTemplatePath)
-        
         // Add filter.
         resultFilter = MultiFrameResultCrossFilter()
         resultFilter.enableResultCrossVerification(.barcode, isEnabled: true)

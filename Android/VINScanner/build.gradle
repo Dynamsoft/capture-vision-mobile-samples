@@ -15,7 +15,7 @@ allprojects {
     }
 }
 
-/***For developer***/
+/***For debug***/
 import java.util.concurrent.TimeUnit
 def getLocalProperty(String name) {
     Properties properties = new Properties()
@@ -33,7 +33,7 @@ allprojects {
         useDynamsoftMaven = dynamsoftMaven != null
     }
     if(useDynamsoftMaven) {
-        configurations.all {
+        configurations.configureEach {
             resolutionStrategy.cacheChangingModulesFor 0, TimeUnit.SECONDS
         }
         repositories {

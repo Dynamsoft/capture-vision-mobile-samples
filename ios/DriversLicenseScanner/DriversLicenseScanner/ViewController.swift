@@ -17,7 +17,7 @@ class ViewController: UIViewController, CapturedResultReceiver, LicenseVerificat
     private var dce: CameraEnhancer!
     private var dceView: CameraView!
     
-    private var driveLicenseTemplate = "ReadPDF417"
+    private var driveLicenseTemplate = "ReadDriversLicense"
     private var isExistRecognizedText = false
     
     private lazy var resultView: UITextView = {
@@ -78,10 +78,6 @@ extension ViewController {
     private func configureCVR() -> Void {
         cvr = CaptureVisionRouter()
         cvr.addResultReceiver(self)
-        
-        // Init settings.
-        let driverLicenseTemplatePath = "drivers-license.json"
-        try? cvr.initSettingsFromFile(driverLicenseTemplatePath)
     }
     
     private func configureDCE() -> Void {
