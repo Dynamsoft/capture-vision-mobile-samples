@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2sm-qM-ybs">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="8ev-JR-gTP">
+            <objects>
+                <viewController id="7SK-p8-rSu" customClass="ViewController" customModule="DocumentScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eY4-7u-AZ0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="dynamsoft" translatesAutoresizingMaskIntoConstraints="NO" id="J6x-RV-VRI">
+                                <rect key="frame" x="121.66666666666669" y="180.33333333333334" width="150" height="37"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Document Scanner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOm-uT-swP">
+                                <rect key="frame" x="80.666666666666686" y="252.33333333333334" width="232" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G73-0N-kf6">
+                                <rect key="frame" x="60" y="306" width="273" height="154.66666666666663"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Dynamsoft Document normalizer detects the document boundaries from the mobile camera and  normalize the document pages with deskewing and other image processing algorithms.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by Dynamsoft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5b-Wz-np7">
+                                <rect key="frame" x="112.66666666666669" y="763.66666666666663" width="168" height="19.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrF-q0-cRv">
+                                <rect key="frame" x="91.666666666666686" y="495.66666666666674" width="210" height="48"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.5568627451" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="AgF-cd-Gyi"/>
+                                    <constraint firstAttribute="height" constant="48" id="ZVU-wb-qZS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Scan MRZ"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Scan a Document">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onTouchUp:" destination="7SK-p8-rSu" eventType="touchUpInside" id="Btb-vJ-VLF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Tr-j7-5ly"/>
+                        <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Tr-j7-5ly" firstAttribute="trailing" secondItem="G73-0N-kf6" secondAttribute="trailing" constant="60" id="3jC-6P-Wv5"/>
+                            <constraint firstItem="CrF-q0-cRv" firstAttribute="centerX" secondItem="eY4-7u-AZ0" secondAttribute="centerX" id="7C1-TP-7oo"/>
+                            <constraint firstItem="G73-0N-kf6" firstAttribute="top" secondItem="aOm-uT-swP" secondAttribute="bottom" constant="20" id="9sa-VP-FZG"/>
+                            <constraint firstItem="G73-0N-kf6" firstAttribute="leading" secondItem="4Tr-j7-5ly" secondAttribute="leading" constant="60" id="BhB-eX-gsg"/>
+                            <constraint firstItem="Y5b-Wz-np7" firstAttribute="centerX" secondItem="eY4-7u-AZ0" secondAttribute="centerX" id="EUx-ot-ejG"/>
+                            <constraint firstItem="J6x-RV-VRI" firstAttribute="centerX" secondItem="eY4-7u-AZ0" secondAttribute="centerX" id="HjO-E7-trm"/>
+                            <constraint firstItem="4Tr-j7-5ly" firstAttribute="bottom" secondItem="Y5b-Wz-np7" secondAttribute="bottom" constant="35" id="Hvt-ew-5aa"/>
+                            <constraint firstItem="G73-0N-kf6" firstAttribute="bottom" secondItem="4Tr-j7-5ly" secondAttribute="centerY" id="Vwf-XA-SVG"/>
+                            <constraint firstItem="G73-0N-kf6" firstAttribute="centerX" secondItem="eY4-7u-AZ0" secondAttribute="centerX" id="ZC0-6r-M54"/>
+                            <constraint firstItem="aOm-uT-swP" firstAttribute="centerX" secondItem="eY4-7u-AZ0" secondAttribute="centerX" id="eg2-ND-eyL"/>
+                            <constraint firstItem="aOm-uT-swP" firstAttribute="top" secondItem="J6x-RV-VRI" secondAttribute="bottom" constant="35" id="lZW-OF-OJh"/>
+                            <constraint firstItem="CrF-q0-cRv" firstAttribute="top" secondItem="G73-0N-kf6" secondAttribute="bottom" constant="35" id="pjW-gE-mwy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LsQ-8m-zIF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kH8-Mp-lcj" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1979.3893129770991" y="-34.507042253521128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2ew-fA-ZIy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2sm-qM-ybs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yLa-Pv-aiI">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7SK-p8-rSu" kind="relationship" relationship="rootViewController" id="Hnq-2u-NdQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rDi-LM-STE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052.6717557251909" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dynamsoft" width="150" height="37"/>
+    </resources>
+</document>

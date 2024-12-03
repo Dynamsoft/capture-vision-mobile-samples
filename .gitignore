@@ -30,3 +30,4 @@ iOSInjectionProject/
 project.xcworkspace
 .idea/
 xcshareddata/
+*.xcframework
