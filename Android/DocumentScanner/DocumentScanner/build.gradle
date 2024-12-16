@@ -29,7 +29,7 @@ android {
 }
 
 dependencies {
-    implementation("com.dynamsoft:dynamsoftcapturevisionbundle:2.6.1000") {
+    implementation("com.dynamsoft:dynamsoftcapturevisionbundle:2.6.1001") {
         exclude group: "com.dynamsoft", module: "dynamsoftbarcodereader"
         exclude group: "com.dynamsoft", module: "dynamsoftlabelrecognizer"
         exclude group: "com.dynamsoft", module: "dynamsoftcodeparser"
