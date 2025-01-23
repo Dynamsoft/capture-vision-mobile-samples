@@ -42,7 +42,7 @@ def getVersion(String productSimpleName, String defaultValue) {
 }
 
 dependencies {
-    implementation("com.dynamsoft:dynamsoftcapturevisionbundle:2.6.1001") {
+    implementation("com.dynamsoft:dynamsoftcapturevisionbundle:2.6.1003") {
         exclude group: "com.dynamsoft", module: "dynamsoftlabelrecognizer"
         exclude group: "com.dynamsoft", module: "dynamsoftdocumentnormalizer"
     }
