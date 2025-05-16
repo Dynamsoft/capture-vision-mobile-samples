@@ -5,9 +5,7 @@
  */
 
 import UIKit
-import DynamsoftCore
-import DynamsoftCaptureVisionRouter
-import DynamsoftDocumentNormalizer
+import DynamsoftCaptureVisionBundle
 
 class ResultViewController: UIViewController {
     var data: ImageData!
@@ -115,12 +113,16 @@ class ResultViewController: UIViewController {
         }
         // Capture the image again with the new ROI.
         let result = cvr.captureFromBuffer(data, templateName: name)
-        if let item = result.items?.first, item.type == .normalizedImage {
-            let imageItem:NormalizedImageResultItem = item as! NormalizedImageResultItem
-            // Get the normalized image and display it on the view.
-            let image = try? imageItem.imageData?.toUIImage()
-            DispatchQueue.main.async { [self] in
-                imageView.image = image
+        guard let items = result.items else { return }
+        for item in items {
+            if item.type == .enhancedImage {
+                let imageItem:EnhancedImageResultItem = item as! EnhancedImageResultItem
+                // Get the normalized image and display it on the view.
+                let image = try? imageItem.imageData?.toUIImage()
+                DispatchQueue.main.async { [self] in
+                    imageView.image = image
+                }
+                return
             }
         }
     }

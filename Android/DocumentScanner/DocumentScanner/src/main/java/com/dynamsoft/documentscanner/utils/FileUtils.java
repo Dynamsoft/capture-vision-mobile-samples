@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.dynamsoft.core.basic_structures.CoreException;
 import com.dynamsoft.core.basic_structures.ImageData;
 import com.dynamsoft.documentscanner.R;
-import com.dynamsoft.utility.ImageManager;
+import com.dynamsoft.utility.ImageIO;
 import com.dynamsoft.utility.UtilityException;
 
 import java.io.File;
@@ -65,7 +65,7 @@ public class FileUtils {
             // Android 9 and below
             File picturesDir = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
             File outFile = new File(picturesDir, fileName);
-            new ImageManager().saveToFile(image, outFile.getAbsolutePath(), true);
+            new ImageIO().saveToFile(image, outFile.getAbsolutePath(), true);
             Toast.makeText(context, "Successfully saved to " + outFile.getAbsolutePath(), Toast.LENGTH_LONG).show();
         }
     }

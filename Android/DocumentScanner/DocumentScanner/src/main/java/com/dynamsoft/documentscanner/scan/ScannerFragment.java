@@ -18,10 +18,9 @@ import com.dynamsoft.cvr.CaptureVisionRouterException;
 import com.dynamsoft.cvr.CapturedResultReceiver;
 import com.dynamsoft.cvr.EnumPresetTemplate;
 import com.dynamsoft.dce.CameraEnhancer;
-import com.dynamsoft.dce.CameraEnhancerException;
 import com.dynamsoft.dce.CameraView;
 import com.dynamsoft.dce.utils.PermissionUtil;
-import com.dynamsoft.ddn.NormalizedImagesResult;
+import com.dynamsoft.ddn.ProcessedDocumentResult;
 import com.dynamsoft.documentscanner.R;
 import com.dynamsoft.license.LicenseManager;
 import com.dynamsoft.utility.MultiFrameResultCrossFilter;
@@ -42,7 +41,7 @@ public class ScannerFragment extends Fragment {
         mViewModel.actionBarTitle.setValue(requireContext().getString(R.string.scan_page_title));
 
         if (savedInstanceState == null) {
-            LicenseManager.initLicense("DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9", requireContext(), (isSuccess, error) -> {
+            LicenseManager.initLicense("DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9", (isSuccess, error) -> {
                 if (!isSuccess && error != null) {
                     error.printStackTrace();
                 }
@@ -57,10 +56,10 @@ public class ScannerFragment extends Fragment {
 
         CameraView cameraView = view.findViewById(R.id.cameraView);
         mCamera = new CameraEnhancer(cameraView, getViewLifecycleOwner());
-        mRouter = new CaptureVisionRouter(requireActivity());
+        mRouter = new CaptureVisionRouter();
 
         MultiFrameResultCrossFilter filter = new MultiFrameResultCrossFilter();
-        filter.enableResultCrossVerification(EnumCapturedResultItemType.CRIT_NORMALIZED_IMAGE, true);
+        filter.enableResultCrossVerification(EnumCapturedResultItemType.CRIT_DESKEWED_IMAGE, true);
         mRouter.addResultFilter(filter);
 
 
@@ -73,13 +72,13 @@ public class ScannerFragment extends Fragment {
 
         mRouter.addResultReceiver(new CapturedResultReceiver() {
             @Override
-            public void onNormalizedImagesReceived(@NonNull NormalizedImagesResult result) {
-                if (result.getItems().length > 0 &&
-                        (mIsBtnClicked || result.getItems()[0].getCrossVerificationStatus() == EnumCrossVerificationStatus.CVS_PASSED)) {
+            public void onProcessedDocumentResultReceived(@NonNull ProcessedDocumentResult result) {
+                if (result.getDeskewedImageResultItems().length > 0 &&
+                        (mIsBtnClicked || result.getDeskewedImageResultItems()[0].getCrossVerificationStatus() == EnumCrossVerificationStatus.CVS_PASSED)) {
                     mIsBtnClicked = false;
 
-                    mViewModel.normalizedResultImage = result.getItems()[0].getImageData();
-                    mViewModel.resultLocation = result.getItems()[0].getLocation();
+                    mViewModel.normalizedResultImage = result.getDeskewedImageResultItems()[0].getImageData();
+                    mViewModel.resultLocation = result.getDeskewedImageResultItems()[0].getSourceDeskewQuad();
                     mViewModel.originalImage = mRouter.getIntermediateResultManager().getOriginalImage(result.getOriginalImageHashId());
 
                     goToResultFragment();
@@ -93,11 +92,7 @@ public class ScannerFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        try {
-            mCamera.open();
-        } catch (CameraEnhancerException e) {
-            e.printStackTrace();
-        }
+        mCamera.open();
         mRouter.startCapturing(EnumPresetTemplate.PT_DETECT_AND_NORMALIZE_DOCUMENT, new CompletionListener() {
             @Override
             public void onSuccess() {
@@ -114,11 +109,7 @@ public class ScannerFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        try {
-            mCamera.close();
-        } catch (CameraEnhancerException e) {
-            e.printStackTrace();
-        }
+        mCamera.close();
         mRouter.stopCapturing();
     }
 

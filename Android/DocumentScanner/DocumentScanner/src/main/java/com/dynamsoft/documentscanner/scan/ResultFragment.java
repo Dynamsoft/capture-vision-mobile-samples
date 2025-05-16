@@ -20,6 +20,7 @@ import com.dynamsoft.cvr.CapturedResult;
 import com.dynamsoft.cvr.EnumPresetTemplate;
 import com.dynamsoft.cvr.SimplifiedCaptureVisionSettings;
 import com.dynamsoft.ddn.EnumImageColourMode;
+import com.dynamsoft.ddn.ProcessedDocumentResult;
 import com.dynamsoft.documentscanner.R;
 import com.dynamsoft.documentscanner.utils.FileUtils;
 import com.dynamsoft.utility.UtilityException;
@@ -90,8 +91,8 @@ public class ResultFragment extends Fragment {
             item.setChecked(true);
             int colorMode = item.getItemId() == R.id.item_colour ? EnumImageColourMode.ICM_COLOUR :
                     item.getItemId() == R.id.item_grayscale ? EnumImageColourMode.ICM_GRAYSCALE : EnumImageColourMode.ICM_BINARY;
+            mViewModel.showingImage = changeImageColorMode(mViewModel.normalizedResultImage, colorMode);
             try {
-                mViewModel.showingImage = changeImageColorMode(mViewModel.normalizedResultImage, colorMode);
                 if (mViewModel.showingImage != null) {
                     mIvNormalized.setImageBitmap(mViewModel.showingImage.toBitmap());
                 }
@@ -103,20 +104,25 @@ public class ResultFragment extends Fragment {
     }
 
     private ImageData changeImageColorMode(ImageData imageData, @EnumImageColourMode int colorMode) {
-        CaptureVisionRouter router = new CaptureVisionRouter(requireContext());
+        if(imageData == null || colorMode == EnumImageColourMode.ICM_COLOUR) {
+            return imageData;
+        }
+        CaptureVisionRouter router = new CaptureVisionRouter();
         try {
-            SimplifiedCaptureVisionSettings simplifiedSettings = router.getSimplifiedSettings(EnumPresetTemplate.PT_NORMALIZE_DOCUMENT);
-            assert simplifiedSettings.documentSettings != null;
-            simplifiedSettings.documentSettings.colourMode = colorMode;
-            router.updateSettings(EnumPresetTemplate.PT_NORMALIZE_DOCUMENT, simplifiedSettings);
+            SimplifiedCaptureVisionSettings settings = router.getSimplifiedSettings(EnumPresetTemplate.PT_NORMALIZE_DOCUMENT);
+            assert settings.documentSettings != null;
+            settings.documentSettings.colourMode = colorMode;
+            router.updateSettings(EnumPresetTemplate.PT_NORMALIZE_DOCUMENT, settings);
         } catch (CaptureVisionRouterException e) {
             throw new RuntimeException(e);
         }
-        CapturedResult result = router.capture(imageData, EnumPresetTemplate.PT_NORMALIZE_DOCUMENT);
-        if (result.getNormalizedImagesResult() != null && result.getNormalizedImagesResult().getItems().length > 0) {
-            return result.getNormalizedImagesResult().getItems()[0].getImageData();
+        CapturedResult capture = router.capture(imageData, EnumPresetTemplate.PT_NORMALIZE_DOCUMENT);
+        ProcessedDocumentResult processedDocumentResult = capture.getProcessedDocumentResult();
+        if(processedDocumentResult != null && processedDocumentResult.getEnhancedImageResultItems().length > 0) {
+            return processedDocumentResult.getEnhancedImageResultItems()[0].getImageData();
+        } else {
+            return null;
         }
-        return null;
     }
 
 }

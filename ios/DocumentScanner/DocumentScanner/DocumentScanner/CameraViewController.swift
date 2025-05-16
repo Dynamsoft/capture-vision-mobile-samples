@@ -5,12 +5,7 @@
  */
 
 import UIKit
-import DynamsoftCore
-import DynamsoftCameraEnhancer
-import DynamsoftDocumentNormalizer
-import DynamsoftCaptureVisionRouter
-import DynamsoftLicense
-import DynamsoftUtility
+import DynamsoftCaptureVisionBundle
 
 class CameraViewController: UIViewController {
     
@@ -69,7 +64,7 @@ extension CameraViewController {
         cvr.addResultReceiver(self)
         // Enable multi-frame result cross filter to receive more accurate boundaries.
         let filter = MultiFrameResultCrossFilter()
-        filter.enableResultCrossVerification(.normalizedImage, isEnabled: true)
+        filter.enableResultCrossVerification(.deskewedImage, isEnabled: true)
         cvr.addResultFilter(filter)
     }
     
@@ -137,8 +132,8 @@ extension CameraViewController {
 }
 
 extension CameraViewController: CapturedResultReceiver {
-    func onNormalizedImagesReceived(_ result: NormalizedImagesResult) {
-        if let item = result.items?.first {
+    func onProcessedDocumentResultReceived(_ result: ProcessedDocumentResult) {
+        if let item = result.deskewedImageResultItems?.first {
             if item.crossVerificationStatus == .passed || isButtonSelected {
                 guard let data = cvr.getIntermediateResultManager().getOriginalImage(result.originalImageHashId) else { return }
                 isButtonSelected = false
@@ -146,7 +141,7 @@ extension CameraViewController: CapturedResultReceiver {
                 DispatchQueue.main.async {
                     let vc = ResultViewController()
                     vc.data = data
-                    vc.quad = item.location
+                    vc.quad = item.sourceDeskewQuad
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             }

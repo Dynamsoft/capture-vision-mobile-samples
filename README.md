@@ -10,7 +10,7 @@
 
 ### iOS
 
-- Supported OS: iOS 11.0 or higher (iOS 13 and higher recommended).
+- Supported OS: iOS 13.0 or higher.
 - Supported ABI: arm64 and x86_64.
 - Development Environment: Xcode 13 and above (Xcode 14.1+ recommended), CocoaPods 1.11.0+
 
@@ -19,7 +19,6 @@
 | Sample Name | Description | Programming Languages |
 | ----------- | ----------- | --------------------- |
 | `DocumentScanner` | Scan and deskew document pages from the video stream. | Java/Kotlin/Objective-C/Swift |
-| `DriversLicenseScanner` | Scan the PDF417 barcode on a driver's license and extract driver's information. | Java/Swift |
 | `VINScanner` | Scan the VIN code from a barcode or a text line and extract the vehicle information. | Java/Swift |
 
 ## License

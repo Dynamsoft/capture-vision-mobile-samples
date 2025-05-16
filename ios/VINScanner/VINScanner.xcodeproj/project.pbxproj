@@ -20,18 +20,8 @@
 		0A438CC42B32D67E002A1BA7 /* ComponentsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CC32B32D67E002A1BA7 /* ComponentsUtil.swift */; };
 		0A438CC62B32D735002A1BA7 /* NSObject+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CC52B32D735002A1BA7 /* NSObject+Name.swift */; };
 		0A438CC92B32EB8E002A1BA7 /* VINResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CC82B32EB8E002A1BA7 /* VINResultViewController.swift */; };
-		6838197D2CB92D6900CAC154 /* DynamsoftVIN in Frameworks */ = {isa = PBXBuildFile; productRef = 6838197C2CB92D6900CAC154 /* DynamsoftVIN */; };
-		68AD8FB02CB4D8AC005E8BBF /* DynamsoftBarcodeReader in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FAF2CB4D8AC005E8BBF /* DynamsoftBarcodeReader */; };
-		68AD8FB22CB4D8AC005E8BBF /* DynamsoftCameraEnhancer in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FB12CB4D8AC005E8BBF /* DynamsoftCameraEnhancer */; };
-		68AD8FB42CB4D8AC005E8BBF /* DynamsoftCaptureVisionRouter in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FB32CB4D8AC005E8BBF /* DynamsoftCaptureVisionRouter */; };
-		68AD8FB62CB4D8AC005E8BBF /* DynamsoftCodeParser in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FB52CB4D8AC005E8BBF /* DynamsoftCodeParser */; };
-		68AD8FB82CB4D8AC005E8BBF /* DynamsoftCodeParserDedicator in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FB72CB4D8AC005E8BBF /* DynamsoftCodeParserDedicator */; };
-		68AD8FBA2CB4D8AC005E8BBF /* DynamsoftCore in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FB92CB4D8AC005E8BBF /* DynamsoftCore */; };
-		68AD8FBC2CB4D8AC005E8BBF /* DynamsoftImageProcessing in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FBB2CB4D8AC005E8BBF /* DynamsoftImageProcessing */; };
-		68AD8FBE2CB4D8AC005E8BBF /* DynamsoftLabelRecognizer in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FBD2CB4D8AC005E8BBF /* DynamsoftLabelRecognizer */; };
-		68AD8FC02CB4D8AC005E8BBF /* DynamsoftLicense in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FBF2CB4D8AC005E8BBF /* DynamsoftLicense */; };
-		68AD8FC22CB4D8AC005E8BBF /* DynamsoftNeuralNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FC12CB4D8AC005E8BBF /* DynamsoftNeuralNetwork */; };
-		68AD8FC42CB4D8BB005E8BBF /* DynamsoftUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 68AD8FC32CB4D8BB005E8BBF /* DynamsoftUtility */; };
+		685D23DC2DD5E634005ACF41 /* DynamsoftCaptureVisionBundle in Frameworks */ = {isa = PBXBuildFile; productRef = 685D23DB2DD5E634005ACF41 /* DynamsoftCaptureVisionBundle */; };
+		68739B402DD6CF98003DFF9D /* DynamsoftResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 68739B3F2DD6CF98003DFF9D /* DynamsoftResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +40,7 @@
 		0A438CC32B32D67E002A1BA7 /* ComponentsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsUtil.swift; sourceTree = "<group>"; };
 		0A438CC52B32D735002A1BA7 /* NSObject+Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Name.swift"; sourceTree = "<group>"; };
 		0A438CC82B32EB8E002A1BA7 /* VINResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VINResultViewController.swift; sourceTree = "<group>"; };
+		68739B3F2DD6CF98003DFF9D /* DynamsoftResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DynamsoftResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,18 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68AD8FB62CB4D8AC005E8BBF /* DynamsoftCodeParser in Frameworks */,
-				68AD8FB82CB4D8AC005E8BBF /* DynamsoftCodeParserDedicator in Frameworks */,
-				6838197D2CB92D6900CAC154 /* DynamsoftVIN in Frameworks */,
-				68AD8FC22CB4D8AC005E8BBF /* DynamsoftNeuralNetwork in Frameworks */,
-				68AD8FB02CB4D8AC005E8BBF /* DynamsoftBarcodeReader in Frameworks */,
-				68AD8FBC2CB4D8AC005E8BBF /* DynamsoftImageProcessing in Frameworks */,
-				68AD8FC02CB4D8AC005E8BBF /* DynamsoftLicense in Frameworks */,
-				68AD8FBA2CB4D8AC005E8BBF /* DynamsoftCore in Frameworks */,
-				68AD8FBE2CB4D8AC005E8BBF /* DynamsoftLabelRecognizer in Frameworks */,
-				68AD8FB22CB4D8AC005E8BBF /* DynamsoftCameraEnhancer in Frameworks */,
-				68AD8FB42CB4D8AC005E8BBF /* DynamsoftCaptureVisionRouter in Frameworks */,
-				68AD8FC42CB4D8BB005E8BBF /* DynamsoftUtility in Frameworks */,
+				685D23DC2DD5E634005ACF41 /* DynamsoftCaptureVisionBundle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +85,7 @@
 				0A438C882B32C99F002A1BA7 /* Assets.xcassets */,
 				0A438C8A2B32C99F002A1BA7 /* LaunchScreen.storyboard */,
 				0A438C8D2B32C99F002A1BA7 /* Info.plist */,
+				68739B3F2DD6CF98003DFF9D /* DynamsoftResources.bundle */,
 			);
 			path = VINScanner;
 			sourceTree = "<group>";
@@ -161,18 +142,7 @@
 			);
 			name = VINScanner;
 			packageProductDependencies = (
-				68AD8FAF2CB4D8AC005E8BBF /* DynamsoftBarcodeReader */,
-				68AD8FB12CB4D8AC005E8BBF /* DynamsoftCameraEnhancer */,
-				68AD8FB32CB4D8AC005E8BBF /* DynamsoftCaptureVisionRouter */,
-				68AD8FB52CB4D8AC005E8BBF /* DynamsoftCodeParser */,
-				68AD8FB72CB4D8AC005E8BBF /* DynamsoftCodeParserDedicator */,
-				68AD8FB92CB4D8AC005E8BBF /* DynamsoftCore */,
-				68AD8FBB2CB4D8AC005E8BBF /* DynamsoftImageProcessing */,
-				68AD8FBD2CB4D8AC005E8BBF /* DynamsoftLabelRecognizer */,
-				68AD8FBF2CB4D8AC005E8BBF /* DynamsoftLicense */,
-				68AD8FC12CB4D8AC005E8BBF /* DynamsoftNeuralNetwork */,
-				68AD8FC32CB4D8BB005E8BBF /* DynamsoftUtility */,
-				6838197C2CB92D6900CAC154 /* DynamsoftVIN */,
+				685D23DB2DD5E634005ACF41 /* DynamsoftCaptureVisionBundle */,
 			);
 			productName = VINScanner;
 			productReference = 0A438C7C2B32C99E002A1BA7 /* VINScanner.app */;
@@ -202,7 +172,7 @@
 			);
 			mainGroup = 0A438C732B32C99E002A1BA7;
 			packageReferences = (
-				68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */,
+				685D23DA2DD5E634005ACF41 /* XCRemoteSwiftPackageReference "capture-vision-spm" */,
 			);
 			productRefGroup = 0A438C7D2B32C99E002A1BA7 /* Products */;
 			projectDirPath = "";
@@ -219,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A438C8C2B32C99F002A1BA7 /* LaunchScreen.storyboard in Resources */,
+				68739B402DD6CF98003DFF9D /* DynamsoftResources.bundle in Resources */,
 				0A438C892B32C99F002A1BA7 /* Assets.xcassets in Resources */,
 				0A438C872B32C99E002A1BA7 /* Main.storyboard in Resources */,
 			);
@@ -387,7 +358,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W6PESGXW9M;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VINScanner/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "VINScanner Sample needs to access your camera.";
@@ -417,7 +388,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W6PESGXW9M;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VINScanner/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "VINScanner Sample needs to access your camera.";
@@ -464,76 +435,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */ = {
+		685D23DA2DD5E634005ACF41 /* XCRemoteSwiftPackageReference "capture-vision-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Dynamsoft/capture-vision-spm";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.6.1004;
+				minimumVersion = 3.0.3000;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6838197C2CB92D6900CAC154 /* DynamsoftVIN */ = {
+		685D23DB2DD5E634005ACF41 /* DynamsoftCaptureVisionBundle */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftVIN;
-		};
-		68AD8FAF2CB4D8AC005E8BBF /* DynamsoftBarcodeReader */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftBarcodeReader;
-		};
-		68AD8FB12CB4D8AC005E8BBF /* DynamsoftCameraEnhancer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftCameraEnhancer;
-		};
-		68AD8FB32CB4D8AC005E8BBF /* DynamsoftCaptureVisionRouter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftCaptureVisionRouter;
-		};
-		68AD8FB52CB4D8AC005E8BBF /* DynamsoftCodeParser */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftCodeParser;
-		};
-		68AD8FB72CB4D8AC005E8BBF /* DynamsoftCodeParserDedicator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftCodeParserDedicator;
-		};
-		68AD8FB92CB4D8AC005E8BBF /* DynamsoftCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftCore;
-		};
-		68AD8FBB2CB4D8AC005E8BBF /* DynamsoftImageProcessing */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftImageProcessing;
-		};
-		68AD8FBD2CB4D8AC005E8BBF /* DynamsoftLabelRecognizer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftLabelRecognizer;
-		};
-		68AD8FBF2CB4D8AC005E8BBF /* DynamsoftLicense */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftLicense;
-		};
-		68AD8FC12CB4D8AC005E8BBF /* DynamsoftNeuralNetwork */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftNeuralNetwork;
-		};
-		68AD8FC32CB4D8BB005E8BBF /* DynamsoftUtility */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AD8FAE2CB4D8AC005E8BBF /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftUtility;
+			package = 685D23DA2DD5E634005ACF41 /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
+			productName = DynamsoftCaptureVisionBundle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

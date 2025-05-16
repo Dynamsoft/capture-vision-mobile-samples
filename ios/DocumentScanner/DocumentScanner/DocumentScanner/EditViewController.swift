@@ -5,9 +5,7 @@
  */
 
 import UIKit
-import DynamsoftCameraEnhancer
-import DynamsoftCaptureVisionRouter
-import DynamsoftDocumentNormalizer
+import DynamsoftCaptureVisionBundle
 
 class EditViewController: UIViewController {
     var data: ImageData!

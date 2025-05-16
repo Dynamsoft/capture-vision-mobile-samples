@@ -13,17 +13,24 @@
 		1DC845862CEB041F00998CCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC845842CEB041F00998CCD /* Main.storyboard */; };
 		1DC845882CEB042000998CCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC845872CEB042000998CCD /* Assets.xcassets */; };
 		1DC8458B2CEB042000998CCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC845892CEB042000998CCD /* LaunchScreen.storyboard */; };
+		685D23E12DD5E6B3005ACF41 /* DynamsoftCaptureVisionBundle in Frameworks */ = {isa = PBXBuildFile; productRef = 685D23E02DD5E6B3005ACF41 /* DynamsoftCaptureVisionBundle */; };
 		68AFF1252CF420BD005B22C6 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AFF1242CF420BD005B22C6 /* CameraViewController.swift */; };
 		68AFF1272CF420C1005B22C6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AFF1262CF420C1005B22C6 /* EditViewController.swift */; };
 		68AFF1292CF420D0005B22C6 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AFF1282CF420D0005B22C6 /* ResultViewController.swift */; };
-		68AFF1342CF4210F005B22C6 /* DynamsoftCaptureVisionRouter in Frameworks */ = {isa = PBXBuildFile; productRef = 68AFF1332CF4210F005B22C6 /* DynamsoftCaptureVisionRouter */; };
-		68AFF13C2CF4210F005B22C6 /* DynamsoftLicense in Frameworks */ = {isa = PBXBuildFile; productRef = 68AFF13B2CF4210F005B22C6 /* DynamsoftLicense */; };
-		68AFF13E2CF4210F005B22C6 /* DynamsoftUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 68AFF13D2CF4210F005B22C6 /* DynamsoftUtility */; };
-		68CFBAA12CF83D2800E125F8 /* DynamsoftCameraEnhancer in Frameworks */ = {isa = PBXBuildFile; productRef = 68CFBAA02CF83D2800E125F8 /* DynamsoftCameraEnhancer */; };
-		68CFBAA32CF83D2C00E125F8 /* DynamsoftCore in Frameworks */ = {isa = PBXBuildFile; productRef = 68CFBAA22CF83D2C00E125F8 /* DynamsoftCore */; };
-		68CFBAA52CF83D2F00E125F8 /* DynamsoftDocumentNormalizer in Frameworks */ = {isa = PBXBuildFile; productRef = 68CFBAA42CF83D2F00E125F8 /* DynamsoftDocumentNormalizer */; };
-		68CFBAA72CF83D3200E125F8 /* DynamsoftImageProcessing in Frameworks */ = {isa = PBXBuildFile; productRef = 68CFBAA62CF83D3200E125F8 /* DynamsoftImageProcessing */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		684B80D72DD1CA6F001EAE38 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1DC8457B2CEB041F00998CCD /* DocumentScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,13 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68CFBAA52CF83D2F00E125F8 /* DynamsoftDocumentNormalizer in Frameworks */,
-				68AFF13E2CF4210F005B22C6 /* DynamsoftUtility in Frameworks */,
-				68CFBAA12CF83D2800E125F8 /* DynamsoftCameraEnhancer in Frameworks */,
-				68CFBAA72CF83D3200E125F8 /* DynamsoftImageProcessing in Frameworks */,
-				68AFF1342CF4210F005B22C6 /* DynamsoftCaptureVisionRouter in Frameworks */,
-				68AFF13C2CF4210F005B22C6 /* DynamsoftLicense in Frameworks */,
-				68CFBAA32CF83D2C00E125F8 /* DynamsoftCore in Frameworks */,
+				685D23E12DD5E6B3005ACF41 /* DynamsoftCaptureVisionBundle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +109,7 @@
 				1DC845772CEB041F00998CCD /* Sources */,
 				1DC845782CEB041F00998CCD /* Frameworks */,
 				1DC845792CEB041F00998CCD /* Resources */,
+				684B80D72DD1CA6F001EAE38 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,7 +145,7 @@
 			);
 			mainGroup = 1DC845722CEB041F00998CCD;
 			packageReferences = (
-				68AFF1302CF4210F005B22C6 /* XCRemoteSwiftPackageReference "capture-vision-spm" */,
+				685D23DF2DD5E6B3005ACF41 /* XCRemoteSwiftPackageReference "capture-vision-spm" */,
 			);
 			productRefGroup = 1DC8457C2CEB041F00998CCD /* Products */;
 			projectDirPath = "";
@@ -329,7 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W6PESGXW9M;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DocumentScanner/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Open camera to capture document";
@@ -360,7 +362,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W6PESGXW9M;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DocumentScanner/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Open camera to capture document";
@@ -408,51 +410,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		68AFF1302CF4210F005B22C6 /* XCRemoteSwiftPackageReference "capture-vision-spm" */ = {
+		685D23DF2DD5E6B3005ACF41 /* XCRemoteSwiftPackageReference "capture-vision-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Dynamsoft/capture-vision-spm";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.6.1004;
+				minimumVersion = 3.0.3000;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		68AFF1332CF4210F005B22C6 /* DynamsoftCaptureVisionRouter */ = {
+		685D23E02DD5E6B3005ACF41 /* DynamsoftCaptureVisionBundle */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 68AFF1302CF4210F005B22C6 /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftCaptureVisionRouter;
-		};
-		68AFF13B2CF4210F005B22C6 /* DynamsoftLicense */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AFF1302CF4210F005B22C6 /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftLicense;
-		};
-		68AFF13D2CF4210F005B22C6 /* DynamsoftUtility */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AFF1302CF4210F005B22C6 /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftUtility;
-		};
-		68CFBAA02CF83D2800E125F8 /* DynamsoftCameraEnhancer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AFF1302CF4210F005B22C6 /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftCameraEnhancer;
-		};
-		68CFBAA22CF83D2C00E125F8 /* DynamsoftCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AFF1302CF4210F005B22C6 /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftCore;
-		};
-		68CFBAA42CF83D2F00E125F8 /* DynamsoftDocumentNormalizer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AFF1302CF4210F005B22C6 /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftDocumentNormalizer;
-		};
-		68CFBAA62CF83D3200E125F8 /* DynamsoftImageProcessing */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68AFF1302CF4210F005B22C6 /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
-			productName = DynamsoftImageProcessing;
+			package = 685D23DF2DD5E6B3005ACF41 /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
+			productName = DynamsoftCaptureVisionBundle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

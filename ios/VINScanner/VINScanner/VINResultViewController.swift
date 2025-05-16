@@ -5,7 +5,7 @@
  */
 
 import UIKit
-import DynamsoftCodeParser
+import DynamsoftCaptureVisionBundle
 
 let VIN_InfoList: [[String: String]] = [["Title": "VIN String", "FieldName": "vinString"],
                                         ["Title": "WMI", "FieldName": "WMI"],

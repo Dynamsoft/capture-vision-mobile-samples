@@ -1,8 +1,5 @@
 <resources>
-    <string name="app_name">VIN Scanner</string>
+    <string name="app_name">VINScanner</string>
     <string name="vin_barcode">Vin - Barcode</string>
     <string name="vin_text">Vin - Text</string>
-
-    <string name="scanner_fragment_label">Scanner Fragment</string>
-    <string name="result_fragment_label">Result Fragment</string>
 </resources>

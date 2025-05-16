@@ -5,13 +5,7 @@
  */
 
 import UIKit
-import DynamsoftCaptureVisionRouter
-import DynamsoftCodeParser
-import DynamsoftBarcodeReader
-import DynamsoftLabelRecognizer
-import DynamsoftCameraEnhancer
-import DynamsoftUtility
-import DynamsoftLicense
+import DynamsoftCaptureVisionBundle
 
 class ViewController: UIViewController, CapturedResultReceiver, LicenseVerificationListener {
 

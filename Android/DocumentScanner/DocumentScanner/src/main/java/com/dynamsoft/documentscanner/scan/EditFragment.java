@@ -12,17 +12,13 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.dynamsoft.core.basic_structures.ImageData;
 import com.dynamsoft.core.basic_structures.Quadrilateral;
-import com.dynamsoft.cvr.CaptureVisionRouter;
-import com.dynamsoft.cvr.CaptureVisionRouterException;
-import com.dynamsoft.cvr.CapturedResult;
-import com.dynamsoft.cvr.EnumPresetTemplate;
-import com.dynamsoft.cvr.SimplifiedCaptureVisionSettings;
 import com.dynamsoft.dce.DrawingItem;
 import com.dynamsoft.dce.DrawingLayer;
 import com.dynamsoft.dce.ImageEditorView;
 import com.dynamsoft.dce.QuadDrawingItem;
-import com.dynamsoft.ddn.NormalizedImageResultItem;
 import com.dynamsoft.documentscanner.R;
+import com.dynamsoft.utility.ImageProcessor;
+import com.dynamsoft.utility.UtilityException;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -65,24 +61,9 @@ public class EditFragment extends Fragment {
         if (imageData == null || quadrilateral == null) {
             return null;
         }
-        CaptureVisionRouter router = new CaptureVisionRouter(requireContext());
-        String template = EnumPresetTemplate.PT_NORMALIZE_DOCUMENT;
         try {
-            SimplifiedCaptureVisionSettings settings = router.getSimplifiedSettings(template);
-            // Set the detected boundary received in the previous step as the new ROI.
-            settings.roi = quadrilateral;
-            settings.roiMeasuredInPercentage = false;
-            router.updateSettings(template, settings);
-        } catch (CaptureVisionRouterException e) {
-            e.printStackTrace();
-        }
-
-        // Use the capture method to process the image.
-        CapturedResult result = router.capture(imageData, template);
-
-        if (result.getItems().length > 0) {
-            return ((NormalizedImageResultItem) result.getItems()[0]).getImageData();
-        } else {
+            return new ImageProcessor().cropImage(imageData, quadrilateral);
+        } catch (UtilityException e) {
             return null;
         }
     }
