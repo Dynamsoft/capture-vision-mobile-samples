@@ -39,7 +39,7 @@ class VINResultViewController: UIViewController, UITableViewDelegate, UITableVie
         let view = UIView(frame: CGRect(x: 0, y: 0, width: headerWidth, height: headerHeight))
         let label = UILabel(frame: CGRect(x: 20, y: 0, width: headerWidth - 20, height: headerHeight))
         label.text = "VIN Info"
-        label.textColor = .black
+        label.textColor = .label
         label.font = UIFont.systemFont(ofSize: 20)
         view.addSubview(label)
         return view
@@ -103,7 +103,7 @@ extension VINResultViewController {
         cell?.textLabel?.font = UIFont.systemFont(ofSize: 14)
         cell?.detailTextLabel?.text = subTitle
         cell?.detailTextLabel?.numberOfLines = 0
-        cell?.detailTextLabel?.textColor = .black.withAlphaComponent(0.6)
+        cell?.detailTextLabel?.textColor = .label.withAlphaComponent(0.6)
         cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 14)
         return cell!
     }
