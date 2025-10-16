@@ -2,7 +2,6 @@ package com.dynamsoft.dcv.vinscanner;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -32,10 +31,6 @@ import com.dynamsoft.license.LicenseManager;
 import com.dynamsoft.utility.MultiFrameResultCrossFilter;
 
 import java.util.Locale;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TEMPLATE_READ_VIN_BARCODE = "ReadVINBarcode";
@@ -44,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private CameraEnhancer camera;
     private String parsedText;
     private String currentTemplate = TEMPLATE_READ_VIN_BARCODE;
-    private final ExecutorService switchModeThread = new ThreadPoolExecutor(1, 1, 0, TimeUnit.MILLISECONDS,
-            new LinkedBlockingQueue<>(1), new ThreadPoolExecutor.DiscardOldestPolicy());
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -160,10 +154,10 @@ public class MainActivity extends AppCompatActivity {
         RadioButton btnBarcode = findViewById(R.id.btn_vin_barcode);
         RadioButton btnText = findViewById(R.id.btn_vin_text);
         ((RadioGroup) findViewById(R.id.rg_modes)).setOnCheckedChangeListener((group, checkedId) -> {
-            if(btnBarcode.isPressed()) {
+            if (btnBarcode.isPressed()) {
                 camera.disableEnhancedFeatures(EnumEnhancerFeatures.EF_FRAME_FILTER);
                 currentTemplate = TEMPLATE_READ_VIN_BARCODE;
-            } else if(btnText.isPressed()) {
+            } else if (btnText.isPressed()) {
                 try {
                     camera.enableEnhancedFeatures(EnumEnhancerFeatures.EF_FRAME_FILTER);
                 } catch (Exception e) {
@@ -173,12 +167,12 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 return;
             }
-            switchModeThread.submit(() -> {
-                if (!this.isFinishing()) {
-                    router.stopCapturing();
-                    router.startCapturing(currentTemplate, null);
-                }
-            });
+            try {
+                router.switchCapturingTemplate(currentTemplate);
+            } catch (CaptureVisionRouterException e) {
+                // Throws an exception only when attempting to switch to an invalid template name.
+                throw new RuntimeException(e);
+            }
         });
     }
 
