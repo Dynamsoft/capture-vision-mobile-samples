@@ -14,15 +14,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.dynamsoft.core.basic_structures.CoreException;
 import com.dynamsoft.core.basic_structures.ImageData;
-import com.dynamsoft.cvr.CaptureVisionRouter;
-import com.dynamsoft.cvr.CaptureVisionRouterException;
-import com.dynamsoft.cvr.CapturedResult;
-import com.dynamsoft.cvr.EnumPresetTemplate;
-import com.dynamsoft.cvr.SimplifiedCaptureVisionSettings;
 import com.dynamsoft.ddn.EnumImageColourMode;
-import com.dynamsoft.ddn.ProcessedDocumentResult;
 import com.dynamsoft.documentscanner.R;
 import com.dynamsoft.documentscanner.utils.FileUtils;
+import com.dynamsoft.utility.ImageProcessor;
 import com.dynamsoft.utility.UtilityException;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -107,21 +102,11 @@ public class ResultFragment extends Fragment {
         if(imageData == null || colorMode == EnumImageColourMode.ICM_COLOUR) {
             return imageData;
         }
-        CaptureVisionRouter router = new CaptureVisionRouter();
-        try {
-            SimplifiedCaptureVisionSettings settings = router.getSimplifiedSettings(EnumPresetTemplate.PT_NORMALIZE_DOCUMENT);
-            assert settings.documentSettings != null;
-            settings.documentSettings.colourMode = colorMode;
-            router.updateSettings(EnumPresetTemplate.PT_NORMALIZE_DOCUMENT, settings);
-        } catch (CaptureVisionRouterException e) {
-            throw new RuntimeException(e);
-        }
-        CapturedResult capture = router.capture(imageData, EnumPresetTemplate.PT_NORMALIZE_DOCUMENT);
-        ProcessedDocumentResult processedDocumentResult = capture.getProcessedDocumentResult();
-        if(processedDocumentResult != null && processedDocumentResult.getEnhancedImageResultItems().length > 0) {
-            return processedDocumentResult.getEnhancedImageResultItems()[0].getImageData();
-        } else {
-            return null;
+        ImageProcessor processor = new ImageProcessor();
+        if(colorMode == EnumImageColourMode.ICM_GRAYSCALE) {
+            return processor.convertToGray(imageData);
+        } else { //colorMode == EnumImageColourMode.ICM_BINARY
+            return processor.convertToBinaryLocal(imageData, 0, 15, false);
         }
     }
 

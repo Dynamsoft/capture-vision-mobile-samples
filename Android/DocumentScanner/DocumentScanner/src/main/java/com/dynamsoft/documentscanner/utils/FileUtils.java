@@ -3,7 +3,6 @@ package com.dynamsoft.documentscanner.utils;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -11,6 +10,7 @@ import android.provider.MediaStore;
 import android.widget.Toast;
 
 import com.dynamsoft.core.basic_structures.CoreException;
+import com.dynamsoft.core.basic_structures.EnumImageFileFormat;
 import com.dynamsoft.core.basic_structures.ImageData;
 import com.dynamsoft.documentscanner.R;
 import com.dynamsoft.utility.ImageIO;
@@ -39,7 +39,7 @@ public class FileUtils {
      * @throws UtilityException If an unexpected issue occurs with {@code new ImageManager().saveToFile()}.
      */
     public static void saveImageToGallery(Context context, ImageData image) throws IOException, CoreException, UtilityException {
-        String fileName = "Dynamsoft_normalize_" + System.currentTimeMillis() + ".jpg";
+        String fileName = "Dynamsoft_normalize_" + System.currentTimeMillis() + ".png";
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             // Android 10 and above
             ContentValues values = new ContentValues();
@@ -50,17 +50,13 @@ public class FileUtils {
             Uri imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
             assert imageUri != null;
             OutputStream outputStream = resolver.openOutputStream(imageUri);
-            Bitmap bitmap = image.toBitmap();
-            if (bitmap == null) {
-                return;
-            }
-            // Write the Bitmap to the output stream
-            if (outputStream != null) {
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+            if(outputStream != null) {
+                byte[] bytes = new ImageIO().saveToMemory(image, EnumImageFileFormat.IFF_PNG);
+                outputStream.write(bytes);
                 outputStream.flush();
                 outputStream.close();
+                Toast.makeText(context, R.string.save_to_album_tip, Toast.LENGTH_SHORT).show();
             }
-            Toast.makeText(context, R.string.save_to_album_tip, Toast.LENGTH_SHORT).show();
         } else {
             // Android 9 and below
             File picturesDir = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
