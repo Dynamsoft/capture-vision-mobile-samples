@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A438C802B32C99E002A1BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438C7F2B32C99E002A1BA7 /* AppDelegate.swift */; };
+		0A438C842B32C99E002A1BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438C832B32C99E002A1BA7 /* ViewController.swift */; };
+		0A438C872B32C99E002A1BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A438C852B32C99E002A1BA7 /* Main.storyboard */; };
+		0A438C892B32C99F002A1BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A438C882B32C99F002A1BA7 /* Assets.xcassets */; };
+		0A438C8C2B32C99F002A1BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A438C8A2B32C99F002A1BA7 /* LaunchScreen.storyboard */; };
+		0A438CB82B32CA6E002A1BA7 /* Dynamsoft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CB32B32CA6E002A1BA7 /* Dynamsoft.swift */; };
+		0A438CB92B32CA6E002A1BA7 /* UIDevice+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CB52B32CA6E002A1BA7 /* UIDevice+Addition.swift */; };
+		0A438CBA2B32CA6E002A1BA7 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CB62B32CA6E002A1BA7 /* UIView+Frame.swift */; };
+		0A438CC12B32D58F002A1BA7 /* PatternTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CBF2B32D58F002A1BA7 /* PatternTableViewCell.swift */; };
+		0A438CC22B32D58F002A1BA7 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CC02B32D58F002A1BA7 /* PatternView.swift */; };
+		0A438CC42B32D67E002A1BA7 /* ComponentsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CC32B32D67E002A1BA7 /* ComponentsUtil.swift */; };
+		0A438CC62B32D735002A1BA7 /* NSObject+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CC52B32D735002A1BA7 /* NSObject+Name.swift */; };
+		0A438CC92B32EB8E002A1BA7 /* VINResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A438CC82B32EB8E002A1BA7 /* VINResultViewController.swift */; };
+		685D23DC2DD5E634005ACF41 /* DynamsoftCaptureVisionBundle in Frameworks */ = {isa = PBXBuildFile; productRef = 685D23DB2DD5E634005ACF41 /* DynamsoftCaptureVisionBundle */; };
+		68739B402DD6CF98003DFF9D /* DynamsoftResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 68739B3F2DD6CF98003DFF9D /* DynamsoftResources.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A438C7C2B32C99E002A1BA7 /* ScanVIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanVIN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A438C7F2B32C99E002A1BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0A438C832B32C99E002A1BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A438C862B32C99E002A1BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0A438C882B32C99F002A1BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A438C8B2B32C99F002A1BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0A438C8D2B32C99F002A1BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A438CB32B32CA6E002A1BA7 /* Dynamsoft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamsoft.swift; sourceTree = "<group>"; };
+		0A438CB52B32CA6E002A1BA7 /* UIDevice+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Addition.swift"; sourceTree = "<group>"; };
+		0A438CB62B32CA6E002A1BA7 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
+		0A438CBF2B32D58F002A1BA7 /* PatternTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternTableViewCell.swift; sourceTree = "<group>"; };
+		0A438CC02B32D58F002A1BA7 /* PatternView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
+		0A438CC32B32D67E002A1BA7 /* ComponentsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsUtil.swift; sourceTree = "<group>"; };
+		0A438CC52B32D735002A1BA7 /* NSObject+Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Name.swift"; sourceTree = "<group>"; };
+		0A438CC82B32EB8E002A1BA7 /* VINResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VINResultViewController.swift; sourceTree = "<group>"; };
+		68739B3F2DD6CF98003DFF9D /* DynamsoftResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DynamsoftResources.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A438C792B32C99E002A1BA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				685D23DC2DD5E634005ACF41 /* DynamsoftCaptureVisionBundle in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A438C732B32C99E002A1BA7 = {
+			isa = PBXGroup;
+			children = (
+				0A438C7E2B32C99E002A1BA7 /* ScanVIN */,
+				0A438C7D2B32C99E002A1BA7 /* Products */,
+				0A438C932B32CA43002A1BA7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0A438C7D2B32C99E002A1BA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A438C7C2B32C99E002A1BA7 /* ScanVIN.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0A438C7E2B32C99E002A1BA7 /* ScanVIN */ = {
+			isa = PBXGroup;
+			children = (
+				0A438CB42B32CA6E002A1BA7 /* Category */,
+				0A438CBE2B32D58F002A1BA7 /* Pattern */,
+				0A438CB22B32CA6E002A1BA7 /* Utils */,
+				0A438C7F2B32C99E002A1BA7 /* AppDelegate.swift */,
+				0A438C832B32C99E002A1BA7 /* ViewController.swift */,
+				0A438CC82B32EB8E002A1BA7 /* VINResultViewController.swift */,
+				0A438C852B32C99E002A1BA7 /* Main.storyboard */,
+				0A438C882B32C99F002A1BA7 /* Assets.xcassets */,
+				0A438C8A2B32C99F002A1BA7 /* LaunchScreen.storyboard */,
+				0A438C8D2B32C99F002A1BA7 /* Info.plist */,
+				68739B3F2DD6CF98003DFF9D /* DynamsoftResources.bundle */,
+			);
+			path = ScanVIN;
+			sourceTree = "<group>";
+		};
+		0A438C932B32CA43002A1BA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0A438CB22B32CA6E002A1BA7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0A438CC32B32D67E002A1BA7 /* ComponentsUtil.swift */,
+				0A438CB32B32CA6E002A1BA7 /* Dynamsoft.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0A438CB42B32CA6E002A1BA7 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0A438CC52B32D735002A1BA7 /* NSObject+Name.swift */,
+				0A438CB52B32CA6E002A1BA7 /* UIDevice+Addition.swift */,
+				0A438CB62B32CA6E002A1BA7 /* UIView+Frame.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		0A438CBE2B32D58F002A1BA7 /* Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				0A438CBF2B32D58F002A1BA7 /* PatternTableViewCell.swift */,
+				0A438CC02B32D58F002A1BA7 /* PatternView.swift */,
+			);
+			path = Pattern;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A438C7B2B32C99E002A1BA7 /* ScanVIN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A438C902B32C99F002A1BA7 /* Build configuration list for PBXNativeTarget "ScanVIN" */;
+			buildPhases = (
+				0A438C782B32C99E002A1BA7 /* Sources */,
+				0A438C792B32C99E002A1BA7 /* Frameworks */,
+				0A438C7A2B32C99E002A1BA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScanVIN;
+			packageProductDependencies = (
+				685D23DB2DD5E634005ACF41 /* DynamsoftCaptureVisionBundle */,
+			);
+			productName = VINScanner;
+			productReference = 0A438C7C2B32C99E002A1BA7 /* ScanVIN.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A438C742B32C99E002A1BA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					0A438C7B2B32C99E002A1BA7 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 0A438C772B32C99E002A1BA7 /* Build configuration list for PBXProject "ScanVIN" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0A438C732B32C99E002A1BA7;
+			packageReferences = (
+				685D23DA2DD5E634005ACF41 /* XCRemoteSwiftPackageReference "capture-vision-spm" */,
+			);
+			productRefGroup = 0A438C7D2B32C99E002A1BA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A438C7B2B32C99E002A1BA7 /* ScanVIN */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A438C7A2B32C99E002A1BA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A438C8C2B32C99F002A1BA7 /* LaunchScreen.storyboard in Resources */,
+				68739B402DD6CF98003DFF9D /* DynamsoftResources.bundle in Resources */,
+				0A438C892B32C99F002A1BA7 /* Assets.xcassets in Resources */,
+				0A438C872B32C99E002A1BA7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A438C782B32C99E002A1BA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A438C842B32C99E002A1BA7 /* ViewController.swift in Sources */,
+				0A438CBA2B32CA6E002A1BA7 /* UIView+Frame.swift in Sources */,
+				0A438CC12B32D58F002A1BA7 /* PatternTableViewCell.swift in Sources */,
+				0A438CC92B32EB8E002A1BA7 /* VINResultViewController.swift in Sources */,
+				0A438CC42B32D67E002A1BA7 /* ComponentsUtil.swift in Sources */,
+				0A438CC62B32D735002A1BA7 /* NSObject+Name.swift in Sources */,
+				0A438C802B32C99E002A1BA7 /* AppDelegate.swift in Sources */,
+				0A438CB82B32CA6E002A1BA7 /* Dynamsoft.swift in Sources */,
+				0A438CB92B32CA6E002A1BA7 /* UIDevice+Addition.swift in Sources */,
+				0A438CC22B32D58F002A1BA7 /* PatternView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0A438C852B32C99E002A1BA7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A438C862B32C99E002A1BA7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0A438C8A2B32C99F002A1BA7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A438C8B2B32C99F002A1BA7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0A438C8E2B32C99F002A1BA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0A438C8F2B32C99F002A1BA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0A438C912B32C99F002A1BA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScanVIN/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Open camera to scan VIN.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dynamsoft.ScanVIN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A438C922B32C99F002A1BA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScanVIN/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Open camera to scan VIN.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dynamsoft.ScanVIN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A438C772B32C99E002A1BA7 /* Build configuration list for PBXProject "ScanVIN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A438C8E2B32C99F002A1BA7 /* Debug */,
+				0A438C8F2B32C99F002A1BA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A438C902B32C99F002A1BA7 /* Build configuration list for PBXNativeTarget "ScanVIN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A438C912B32C99F002A1BA7 /* Debug */,
+				0A438C922B32C99F002A1BA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		685D23DA2DD5E634005ACF41 /* XCRemoteSwiftPackageReference "capture-vision-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Dynamsoft/capture-vision-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.5000;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		685D23DB2DD5E634005ACF41 /* DynamsoftCaptureVisionBundle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 685D23DA2DD5E634005ACF41 /* XCRemoteSwiftPackageReference "capture-vision-spm" */;
+			productName = DynamsoftCaptureVisionBundle;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0A438C742B32C99E002A1BA7 /* Project object */;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ddn_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ddn_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DocumentScanner">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.HomePage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".scan.EditorActivity"
+            android:exported="false"
+            android:label="@string/editor_page_title" />
+        <activity
+            android:name=".scan.ResultDisplayActivity"
+            android:exported="false"
+            android:label="@string/result_page_title" />
+        <activity
+            android:name=".scan.DocumentScannerActivity"
+            android:exported="false"
+            android:label="@string/scan_page_title" />
+    </application>
+
+</manifest>
