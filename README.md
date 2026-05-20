@@ -22,7 +22,6 @@
 | Sample Name | Description | Programming Languages |
 | ----------- | ----------- | --------------------- |
 | `DocumentScanner` | Scan and deskew document pages from the video stream. | Java/Kotlin/Objective-C/Swift |
-| `VINScanner` | Scan the VIN code from a barcode or a text line and extract the vehicle information. | Java/Swift |
 
 ## License
 
