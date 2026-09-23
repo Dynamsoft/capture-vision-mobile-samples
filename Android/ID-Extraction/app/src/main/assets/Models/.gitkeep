@@ -1,0 +1,5 @@
+# Required model files
+#
+#   - MRZLocalization.data
+#   - MRZTextLineRecognition.data
+#   - MRZCharRecognition.data

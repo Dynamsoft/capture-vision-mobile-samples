@@ -31,3 +31,9 @@ project.xcworkspace
 .idea/
 xcshareddata/
 *.xcframework
+
+## iOS ID-Extraction model files
+## Large model binaries are not distributed with the repository.
+## Keep the local copies, but do not commit them.
+ios/ID-Extraction/ID-Extraction/DynamsoftResources.bundle/Models/*.data
+ios/ID-Extraction/ID-Extraction/DynamsoftResources.bundle/Models/*.mlmodelc/

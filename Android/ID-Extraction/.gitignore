@@ -1,0 +1,13 @@
+*.iml
+.gradle
+# Model files are large binaries and are not distributed with this repository.
+# See app/src/main/assets/Models/.gitkeep for the required list.
+*.data
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties

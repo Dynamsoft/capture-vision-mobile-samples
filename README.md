@@ -22,6 +22,7 @@
 | Sample Name | Description | Programming Languages |
 | ----------- | ----------- | --------------------- |
 | `DocumentScanner` | Scan and deskew document pages from the video stream. | Java/Kotlin/Objective-C/Swift |
+| `ID-Extraction` | Recognize and parse the barcode/MRZ zones of documents such as driver's licenses, passports, and ID cards into human-readable information. | Java/Kotlin/Objective-C/Swift |
 
 ## License
 
